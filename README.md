@@ -1,4 +1,4 @@
-# Mangocoin Blockchain Explorer
+# FTS Coin Blockchain Explorer
 Block explorer for FTSCoin CryptoNote based cryptocurrency.
 
 #### Installation
