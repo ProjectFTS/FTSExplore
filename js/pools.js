@@ -30,7 +30,7 @@ var calculateTotalFee = function(config) {
             totalFee += config.config.donation[property];
         }
     }
-    return parseFloat(totalFee.toFixed(2));
+    return totalFee;
 };
 
 var renderPoolRow = function(host, name, data, d) {
@@ -41,7 +41,7 @@ var renderPoolRow = function(host, name, data, d) {
     var pools_row = [];
 
     pools_row.push('<tr>');
-    pools_row.push('<td id=host-'+name+'><a target=blank href=http://'+host+'>'+name+'</a></td>');
+    pools_row.push('<td id=host-' + name + '><a target="_blank" href="http://' + host + '">' + name + '</a></td>');
     pools_row.push('<td class="height" id=height-'+name+'>'+localizeNumber(data.network.height)+'</td>');
     pools_row.push('<td id=hashrate-'+name+'>'+localizeNumber(data.pool.hashrate)+' H/s</td>');
     pools_row.push('<td id=miners-'+name+'>'+localizeNumber(data.pool.miners)+'</td>');
@@ -94,7 +94,7 @@ var displayChart = function displayChart() {
         datasets: [{
             data: sortedPools.map(function(p) { return p[1]; }),
             backgroundColor: sortedPools.map(function(p) { return p[2]; }),
-            borderWidth: 1,
+            borderWidth: 3,
             segmentShowStroke: false
         }]
     };
@@ -106,20 +106,18 @@ var displayChart = function displayChart() {
             },
             title: {
                 display: true,
-                text: 'Network Hashrate Visualization',
-                fontSize: 18,
-                fontColor: '#2ecc71'
+                text: 'Pools Hashrate',
+                fontSize: 22,
+                fontColor: '#409aaf',
             },
             legend: {
+                display: false,
                 position: 'bottom',
-                labels: {
-                    fontColor: '#c8c8c8'
-                },
             },
             layout: {
                 padding: {
                     left: 0,
-                    right: 0
+                    right: 0,
                 },
             },
             tooltips: {
@@ -256,7 +254,7 @@ setInterval(function(){
             lazyRefreshChart();
         });
     });
-
+    
     NETWORK_STAT_MAP2.forEach(function(url, host, map) {
 
         var index = host.indexOf("/");

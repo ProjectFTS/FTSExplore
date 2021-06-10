@@ -1,6 +1,6 @@
 <?php
 return array(
-        'api' => 'http://69.10.35.254:11898',
+        'api' => 'http://ftsexplorer.xyz:11898', // API_json_RPC
         'blockTargetInterval' => 120,
         'coinUnits' => 100000000
 );
