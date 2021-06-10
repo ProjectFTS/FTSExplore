@@ -98,7 +98,7 @@
 				updateText('block.baseReward', getReadableCoins(block.baseReward));
 				updateText('block.transactionsFee', getReadableCoins(block.totalFeeAmount));
 				updateText('block.reward', getReadableCoins(block.reward));
-				updateText('block.totalCoins', getReadableCoins(block.alreadyGeneratedCoins));
+				updateText('block.totalCoins', getReadableCoins(block.alreadyGeneratedCoins - 1000000));
 				updateText('block.totalTransactions', localizeNumber(block.alreadyGeneratedTransactions));
 				renderTransactions(block.transactions);
 			

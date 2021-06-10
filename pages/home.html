@@ -13,7 +13,8 @@
                             <li><i class="fas fa-terminal"></i> Height: <b><span id="networkHeight"></span></b></li>
                             <li><i class="fas fa-code-branch"></i> Transactions: <b><span id="networkTransactions"></span></b></li>
                             <li><i class="far fa-gem"></i> Reward: <b><span id="currentReward"></span></b></li>
-                            <li><i class="fa fa-coins"></i> Supply: <span id="totalCoins"></span></li>
+                            <li><i class="fa fa-coins"></i> Supply:<span id="totalCoins"></span></li>
+</br><p><a href="https://ftscoin.xyz/burnwallet.html"> The above amount does not yet account for the 1,000,000 FTS Coin "burned" on 6/6/2021 from the premine. The above amount should be 1,000,000 coins less. Track/monitor the burned coins by clicking this text.</a></p></br> 
                         </ul>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -223,8 +224,8 @@
                     cache: 'false',
                     success: function(data) {
                     block = data.result.block;
-                       updateText('totalCoins', getReadableCoins(block.alreadyGeneratedCoins,2));
-                       updateText('emissionPercent', (block.alreadyGeneratedCoins / 25000000000000 ).toFixed(4));
+                       updateText('totalCoins', getReadableCoins(block.alreadyGeneratedCoins - 1000000, 2));
+                       updateText('emissionPercent', (block.alreadyGeneratedCoins - 1000000 / 25000000000000).toFixed(4));
                        updateText('currentReward', getReadableCoins(block.baseReward,4));
                     }
                 });
