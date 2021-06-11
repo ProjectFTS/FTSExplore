@@ -1,4 +1,4 @@
-# FTSCoin Blockchain-Explorer for http://ftsexplorer.xyz
+# FTSCoin Blockchain-Explorer for http://ftscoin.xyz/block/index.html
 
 
 Rebranded FTSCoin Explorer for ftscoin.xyz
